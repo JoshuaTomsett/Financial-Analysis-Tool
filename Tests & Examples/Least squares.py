@@ -1,4 +1,3 @@
-import numpy as np
 from matplotlib import pyplot as plt
 
 
@@ -32,3 +31,8 @@ y = [2, 5, 3, 8, 7]
 
 a,b = calcRegressionLine(x, y)
 print(a,b)
+
+# Plot the data and the regression line
+plt.plot(x, y, 'o')
+plt.plot(x, [a*i + b for i in x], '-')
+plt.show()
