@@ -4,8 +4,8 @@
 
 ### Explaination: square area = r^2, Circle area = pi x r^2
 
-### therefore as placement is random the number of marbles in the circle is equal to
-### the number of marbles in the square times pi 
+### Therefore as placement is random the number of marbles in the circle is equal to
+### The number of marbles in the square times pi 
 
 import math
 from random import randint
