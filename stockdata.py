@@ -16,6 +16,15 @@ def get_data(ticker,START_DATE,END_DATE, col):
     return clean_data.fillna(method='ffill') # returns only the data about prices
 
 
+def get_data_days(ticker, days, col):
+    END_DATE = str(datetime.now().strftime('%Y-%m-%d'))
+    WEEK_DATE = datetime.now() - timedelta(days=days)
+    WEEK_DATE = WEEK_DATE.strftime('%Y-%m-%d')
+    stock_data = data.get_data_yahoo(ticker,start=WEEK_DATE,end=END_DATE)
+    clean_data = stock_data[col]
+    return clean_data.fillna(method='ffill') # returns only the data about prices
+
+
 def create_plot(stock_data):
     plt.subplots(figsize=(12,8))
     plt.plot(stock_data)
@@ -25,11 +34,16 @@ def create_plot(stock_data):
     plt.show()
 
 
-END_DATE = str(datetime.now().strftime('%Y-%m-%d'))
-WEEK_DATE = datetime.now() - timedelta(days=30)
-WEEK_DATE = WEEK_DATE.strftime('%Y-%m-%d')
+# END_DATE = str(datetime.now().strftime('%Y-%m-%d'))
+# WEEK_DATE = datetime.now() - timedelta(days=30)
+# WEEK_DATE = WEEK_DATE.strftime('%Y-%m-%d')
 
 ticker = 'TSLA'
 
-week_price = get_data(ticker, WEEK_DATE, END_DATE, 'Adj Close')
+week_price = get_data_days(ticker, 30, 'Adj Close')
 weekGraph = create_plot(week_price)
+
+
+## TO DO ##
+
+## Remove the 100% thing in the yfinance python script, use stock project final report as guide
