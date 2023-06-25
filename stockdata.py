@@ -34,12 +34,11 @@ def create_plot(stock_data):
     plt.show()
 
 
-# END_DATE = str(datetime.now().strftime('%Y-%m-%d'))
-# WEEK_DATE = datetime.now() - timedelta(days=30)
-# WEEK_DATE = WEEK_DATE.strftime('%Y-%m-%d')
-
 if __name__ == '__main__':
 
+    END_DATE = str(datetime.now().strftime('%Y-%m-%d'))
+    WEEK_DATE = datetime.now() - timedelta(days=30)
+    WEEK_DATE = WEEK_DATE.strftime('%Y-%m-%d')
     ticker = 'TSLA'
 
     week_price = get_data_days(ticker, 30)
