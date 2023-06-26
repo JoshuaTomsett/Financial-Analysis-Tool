@@ -34,6 +34,15 @@ def create_plot(stock_data):
     plt.show()
 
 
+def current_price(ticker):
+    week_price = get_data_days(ticker, 7)
+    return week_price[-1]
+
+
+def stock_std(ticker, days):
+    pass
+
+
 if __name__ == '__main__':
 
     END_DATE = str(datetime.now().strftime('%Y-%m-%d'))
@@ -42,4 +51,5 @@ if __name__ == '__main__':
     ticker = 'TSLA'
 
     week_price = get_data_days(ticker, 30)
-    weekGraph = create_plot(week_price)
+    # print(week_price)
+    # weekGraph = create_plot(week_price)
