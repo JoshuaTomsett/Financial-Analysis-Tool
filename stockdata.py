@@ -3,7 +3,7 @@
 from pandas_datareader import data
 import yfinance as yf
 import matplotlib.pyplot as plt
-import pandas as pd
+import numpy as np
 from datetime import datetime , timedelta
 
 yf.pdr_override()
@@ -40,7 +40,9 @@ def current_price(ticker):
 
 
 def stock_std(ticker, days):
-    pass
+    price_array = get_data_days(ticker, days)
+    sigma = np.std(price_array.pct_change())
+    return sigma
 
 
 if __name__ == '__main__':
@@ -51,5 +53,5 @@ if __name__ == '__main__':
     ticker = 'TSLA'
 
     week_price = get_data_days(ticker, 30)
-    # print(week_price)
-    # weekGraph = create_plot(week_price)
+    print(week_price)
+    weekGraph = create_plot(week_price)
