@@ -47,6 +47,4 @@ plt.show()
 
 ### TO DO 
 
-# mu value
-
 # bar chart

@@ -40,12 +40,9 @@ def current_price(ticker):
 
 
 def stock_std_mu(ticker, days):
-    price_array = get_data_days(ticker, days)
-    sigma = np.std(price_array.pct_change())
-
-    daily_returns = price_array[1:] - price_array[:-1]
-    mu = np.mean(daily_returns)
-
+    price_array = get_data_days(ticker, days).pct_change()
+    sigma = np.std(price_array)
+    mu = np.mean(price_array)
     return sigma, mu
 
 
