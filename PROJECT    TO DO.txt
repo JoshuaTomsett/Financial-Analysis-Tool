@@ -1,0 +1,22 @@
+Project Structure:
+
+	dir - Examples
+		- an example program for each tool
+
+	dir - Photos
+		- the screenshots for each example
+
+	dir - Test
+		- Just for random tests, [will be removed in final version]
+
+	 PY - analysisTools.py
+		- contains the tools 
+
+	 PY - stockdata.py
+		- collection of functions for dealing with historical data
+
+## TO-DO
+
+- ReadME, Overall project summery, Explain tools, screenshots of examples 
+
+- Least Squares example
