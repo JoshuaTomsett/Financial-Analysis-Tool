@@ -36,15 +36,18 @@ ticker = "TSLA"
 no_sims = 100
 n = 100 # number of days
 
-days, prices = GBM(ticker, no_sims, n) 
-plt.plot(days, prices)
-plt.ylabel('Price')
-plt.xlabel('Days')
-plt.title(f"Monte Carlo GBM - {ticker}\n" + "$S_t = S_0 * (\mu dt + \sigma \epsilon \sqrt{dt})$")
+days, prices = GBM(ticker, no_sims, n)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+ax1.plot(days, prices)
+ax1.set_ylabel('Price')
+ax1.set_xlabel('Days')
+ax1.set_title(f"Monte Carlo GBM - {ticker}\n" + "$S_t = S_0 * (\mu dt + \sigma \epsilon \sqrt{dt})$")
+
+# Plot the distribution of final prices
+ax2.hist(prices[-1], bins=20)
+ax2.set_ylabel('Frequency')
+ax2.set_xlabel('Price')
+ax2.set_title(f"End Price Histogram - $\mu = {np.mean(prices[-1])}$")
+
 plt.show()
-
-
-
-### TO DO 
-
-# bar chart
