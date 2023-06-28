@@ -5,4 +5,4 @@
  - .png
 
 ### Single Stock Simulation
-!(Photos/MC GBM Price Prediction.png)
+![img](Photos/MC GBM Price Prediction.png)
