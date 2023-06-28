@@ -38,7 +38,7 @@ def GBM(ticker, no_sims, n, S0=False):
         S0: False by default, otherwise the value is the sum of stock values (used for portfolio sim)
 
     Returns:
-        prices: numpy array of simulated prices, shape: (n+1, no_sims)
+        numpy.array: numpy array of simulated prices, shape: (n+1, no_sims)
     """
 
     # variables
@@ -61,6 +61,16 @@ def GBM(ticker, no_sims, n, S0=False):
 
 
 def GBM_portfolio(portfolio, no_sims, n):
+    """Calculates and returns  numpy array that contains the simulated value of the provide portfolio
+
+    Args:
+        portfolio (list): Python list of stock tickers
+        no_sims (int): The number of simulations to be performed
+        n (int): The number of days
+
+    Returns:
+        numpy.array: numpy array of simulated prices, shape: (n+1, no_sims)
+    """
     
     total = np.empty((n+1, no_sims))
     S0 = 0
