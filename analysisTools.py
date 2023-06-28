@@ -37,13 +37,13 @@ def GBM(ticker, no_sims, n):
         n (int): The number of days
 
     Returns:
-        prices: numpy array of simulated prices
+        prices: numpy array of simulated prices, shape: (n+1, no_sims)
     """
 
     # variables
     S0 = stockdata.current_price(ticker)
-    sigma, mu = stockdata.stock_std_mu(ticker, 100)
-    dt = 1/n
+    sigma, mu = stockdata.stock_std_mu(ticker, 180)
+    dt = 1
     
     # Simulate
     prices = np.empty((n+1, no_sims))
@@ -53,8 +53,12 @@ def GBM(ticker, no_sims, n):
         drift_shock = 1 + mu * dt + sigma * np.sqrt(dt) * np.random.normal(0, 1, size=(no_sims, 1)).T
         prices[i] = np.multiply(prices[i-1], drift_shock)
 
-    days = np.arange(0, n+1)
-
-    return days, prices
+    return prices
 
 
+def GBM_portfolio(portfolio, no_sims, n):
+    
+    total = np.array()
+
+    for ticker in portfolio:
+        total += GBM(ticker, no_sims, n)[0]

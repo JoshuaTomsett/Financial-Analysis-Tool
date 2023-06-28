@@ -16,13 +16,22 @@ from analysisTools import GBM
 import numpy as np
 import matplotlib.pyplot as plt
 
-ticker = "TSLA"
+ticker = "AMZN"
 no_sims = 100
 n = 100 # number of days
 
-days, prices = GBM(ticker, no_sims, n)
+prices = GBM(ticker, no_sims, n)
+days = np.arange(0, n+1)
+past_data = stockdata.get_data_days(ticker, 100)
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+fig, (ax0, ax1, ax2) = plt.subplots(1, 3, figsize=(12, 6))
+
+ax0.plot(past_data)
+ax0.set_xlabel("Date")
+ax0.set_ylabel("Price")
+ax0.set_title("Historical data, past 100 days")
+ax0.tick_params(axis='x', labelrotation=20)
+
 ax1.plot(days, prices)
 ax1.set_ylabel('Price')
 ax1.set_xlabel('Days')
