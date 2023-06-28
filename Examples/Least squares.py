@@ -4,13 +4,20 @@ import stockdata
 from analysisTools import calcRegressionLine
 from matplotlib import pyplot as plt
 
-x = [1, 2, 3, 4, 5] # Change to use stockdata
-y = [2, 5, 3, 8, 7]
+
+ticker = 'TSLA'
+days = 30
+data = stockdata.get_data_days(ticker, days)
+x = []
+for i in data:
+    x.append(i)
+
+y = list(range(1, len(x)+1))
 
 a,b = calcRegressionLine(x, y)
 print(a,b)
 
 # Plot the data and the regression line
-plt.plot(x, y, 'o')
-plt.plot(x, [a*i + b for i in x], '-')
+plt.plot(y, x, 'o')
+plt.plot([a*i + b for i in x], x, '-')
 plt.show()
