@@ -18,5 +18,3 @@ Project Structure:
 ## TO-DO
 
 - ReadME, Overall project summery, Explain tools, screenshots of examples 
-
-- Least Squares example
