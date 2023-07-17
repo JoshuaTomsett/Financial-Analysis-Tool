@@ -82,3 +82,7 @@ def GBM_portfolio(portfolio, no_sims, n):
         total += GBM(ticker, no_sims, n)
     
     return total
+
+
+def mean_reversion(ticker):
+    pass
