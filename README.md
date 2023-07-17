@@ -14,9 +14,9 @@ Project summery
 
 ### <ins>Least Squares - Linear Regression</ins>
 
-Formula
+Takes historical stock data and calculates the regression line using the least squares method.
 
- - .png
+![img](https://github.com/JoshuaTomsett/Financial-Analysis-Tool/blob/52f33a88f94daa76b82638b3a3f2a0ddb52be361/Photos/Regression%20Line.png)
 
 
 ### <ins>Single Stock Simulation</ins>
