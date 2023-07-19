@@ -84,5 +84,17 @@ def GBM_portfolio(portfolio, no_sims, n):
     return total
 
 
-def mean_reversion(ticker):
-    pass
+def calculate_moving_average(close_prices, window):
+    """Calculates an array of moving averages for the given close prices in a given window
+
+    Args:
+        close_prices (list): List of close prices
+        window (int): Window size
+
+    Returns:
+        list: List of moving averages
+    """
+
+    weights = np.repeat(1.0, window) / window
+    moving_averages = np.convolve(close_prices, weights, 'valid')
+    return moving_averages
