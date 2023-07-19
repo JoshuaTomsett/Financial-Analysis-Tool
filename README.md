@@ -19,6 +19,13 @@ Takes historical stock data and calculates the regression line using the least s
 ![img](https://github.com/JoshuaTomsett/Financial-Analysis-Tool/blob/52f33a88f94daa76b82638b3a3f2a0ddb52be361/Photos/Regression%20Line.png)
 
 
+### <ins>Mean Reversion - Moving Average Line</ins>
+
+Takes historical stock data and calculates the moving average line
+
+![img](https://github.com/JoshuaTomsett/Financial-Analysis-Tool/blob/abef10eb7e2a3ca298f1074bca42f6dd895634b7/Photos/Moving%20Average.png)
+
+
 ### <ins>Single Stock Simulation</ins>
 
 Simulates the price of a single stock using Geometric Brownian Motion.
